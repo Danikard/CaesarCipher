@@ -1,7 +1,7 @@
-package caesar;
+import caesar.Caesar;
 
-public class Caesar  {
-    public static String encrypt(String plainText,int shift) {
+public class Caesardecrypt {
+    public static String decrypt(String plainText,int shift) {
         if (shift > 26) {
             shift = shift % 26;
         } else if (shift < 0) {
@@ -13,38 +13,35 @@ public class Caesar  {
             char ch= plainText.charAt(i);
             if (Character.isLetter(ch)) {
                 if(Character.isLowerCase(ch)){
-                    char c = (char) (ch+shift);
-                    if(c>'z'){
-                        cipherText +=(char)(ch -(26-shift));
+                    char c = (char) (ch-shift);
+                    if(c<'a'){
+                        cipherText +=(char)(ch +(26-shift));
                     }
                     else {
                         cipherText += c;
                     }
                 }
             }
-                else if(Character.isUpperCase(ch)){
-                char c = (char) (ch+shift);
-                if(c>'Z'){
-                    cipherText +=(char)(ch -(26-shift));
+            else if(Character.isUpperCase(ch)){
+                char c = (char) (ch-shift);
+                if(c<'A'){
+                    cipherText +=(char)(ch +(26-shift));
                 }
                 else {
                     cipherText += c;
                 }
 
-                }
+            }
             else{ cipherText +=ch;
             }
         }
         return cipherText;
     }
 
-public static void main (String[] args){
+    public static void main (String[] args){
         String text ="this is a massage";
-        String cipher = encrypt(text,2);
-        System.out.println(cipher);
+        String decrypt = decrypt(Caesar.encrypt(text,2),2);
+        System.out.println(decrypt);
 
-        }
+    }
 }
-
-
-
