@@ -6,7 +6,8 @@ KARAMBIZI Danius Jonathan
 this program encrypt and decrypt a massage and outputs both messages 
 ## Techinology Used 
 java
+junit
 ### license 
-copright () 2020 KARAMBIZI Danius Jonathan
+copright () 2021 KARAMBIZI Danius Jonathan
 
 
